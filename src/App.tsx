@@ -1,24 +1,28 @@
-import { useState } from "react";
 import "./App.css";
-import { Button } from "@chakra-ui/react";
+import { Button, SimpleGrid } from "@chakra-ui/react";
 import styled from "styled-components";
 
 const StyledButton = styled(Button)`
-  margin-top: 20px;
   background-color: red;
   display: block;
 `;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          <Button colorScheme="blue">Hello world</Button>
-          <StyledButton colorScheme="blue">Hello again</StyledButton>
-        </p>
-      </header>
-    </div>
+    <SimpleGrid
+      width="100vw"
+      height="100vh"
+      gap="12"
+      justifyContent="center"
+      alignContent="center"
+    >
+      <Button colorScheme="blue">Blue button</Button>
+      <StyledButton colorScheme="blue">
+        Button w/ overrides from styled-components
+      </StyledButton>
+      <Button>Button w/ applied defaults</Button>
+      <Button size="xl">Button w/ custom XL size</Button>
+    </SimpleGrid>
   );
 }
 
